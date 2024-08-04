@@ -2,12 +2,16 @@ FROM python:3.12-slim-bullseye
 
 RUN apt-get update
 RUN apt-get install -y python3-dev build-essential libpq-dev
+
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV VIRTUAL_ENV=/opt/venv
 #pip req
 RUN pip install --upgrade pip
-RUN pip install virtualenv && python -m virtualenv /opt/venv
+RUN pip install virtualenv && python -m virtualenv $VIRTUAL_ENV
 
 
-ENV PATH="/opt/venv/bin:$PATH"
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 ADD ./requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
