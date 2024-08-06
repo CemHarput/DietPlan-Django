@@ -45,7 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'DietPlan.apps.DietplanConfig',
-    'rest_framework'
+    'rest_framework',
+    'DietPlan.BaseModel',
+    'DietPlan.BodyTrait',
+    'DietPlan.UserProfile',
+    'DietPlan.Plan',
+    'DietPlan.Meal'
 ]
 
 MIDDLEWARE = [
