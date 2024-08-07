@@ -3,6 +3,7 @@ from DietPlan.BaseModel.BaseModel import BaseModel
 from DietPlan.BodyTrait.models import BodyTrait
 
 
+
 # Create your models here.
 class Plan(BaseModel):
     body_trait = models.ForeignKey(BodyTrait, on_delete=models.CASCADE, related_name='plans')
