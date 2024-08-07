@@ -50,7 +50,9 @@ INSTALLED_APPS = [
     'DietPlan.BodyTrait',
     'DietPlan.UserProfile',
     'DietPlan.Plan',
-    'DietPlan.Meal'
+    'DietPlan.Meal',
+    'DietPlan.Ingredient',
+    'DietPlan.Food',
 ]
 
 MIDDLEWARE = [
