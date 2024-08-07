@@ -1,10 +1,10 @@
 from django.db import models
-from DietPlan.BaseModel.BaseModel import BaseModel
-from DietPlan.Plan.models import Plan
+from DietPlan.Meal.models import Meal
 
 
 # Create your models here.
-class Food(BaseModel):
+class Food(models.Model):
+    meal = models.ForeignKey(Meal, on_delete=models.CASCADE, related_name='foods')
     calorie = models.FloatField()
     meal_time = models.TimeField()
     fat = models.FloatField()

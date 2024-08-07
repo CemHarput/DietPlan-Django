@@ -1,9 +1,8 @@
 from django.db import models
-from DietPlan.BaseModel.BaseModel import BaseModel
 
 
 # Create your models here.
-class BodyTrait(BaseModel):
+class BodyTrait(models.Model):
     GENDER_CHOICES = (
         ('M', 'Male'),
         ('F', 'Female'),
