@@ -2,6 +2,7 @@ FROM python:3.12-slim-bullseye
 
 RUN apt-get update
 RUN apt-get install -y python3-dev build-essential libpq-dev
+RUN apt-get install postgresql-client -y
 
 
 ENV PYTHONDONTWRITEBYTECODE 1
