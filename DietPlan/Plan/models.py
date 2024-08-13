@@ -1,6 +1,7 @@
 from django.db import models
 from DietPlan.BodyTrait.models import BodyTrait
 
+
 # Create your models here.
 class Plan(models.Model):
     body_trait = models.ForeignKey(BodyTrait, on_delete=models.CASCADE, related_name='plans')

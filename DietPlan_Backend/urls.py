@@ -19,9 +19,11 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
 from DietPlan.BodyTrait.views import BodyTraitViewSet
+from DietPlan.Plan.views import PlanViewSet
 
 router = DefaultRouter()
 router.register(r'bodytraits', BodyTraitViewSet)
+router.register(r'plans', PlanViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),

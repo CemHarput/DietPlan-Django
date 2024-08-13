@@ -1,6 +1,4 @@
 import logging
-
-import dateutil.rrule
 from rest_framework import viewsets, filters, status
 from datetime import datetime
 from rest_framework.response import Response
