@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_views
 from rest_framework.routers import DefaultRouter
 
 from DietPlan.BodyTrait.views import BodyTraitViewSet
@@ -26,5 +27,6 @@ router.register(r'bodytraits', BodyTraitViewSet)
 router.register(r'plans', PlanViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),  # DRF login/logout
     path('', include(router.urls)),
 ]

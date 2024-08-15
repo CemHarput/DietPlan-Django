@@ -19,11 +19,16 @@ class BodyTraitViewSet(viewsets.ModelViewSet):
     ordering_fields = ['weight', 'height', 'age']
 
     def create(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return Response({"error": "Authentication is required."}, status=status.HTTP_401_UNAUTHORIZED)
+
         logger.info(f"[{now}] User {request.user} is attempting to create a BodyTrait.")
         user = request.user
+
         if BodyTrait.objects.filter(user=user).exists():
-            logger.error(f"[{now}] {request.user} can only have one BodyTrait.")
+            logger.error(f"[{now}] User {request.user} can only have one BodyTrait.")
             return Response({"error": "You can only have one BodyTrait."}, status=status.HTTP_400_BAD_REQUEST)
+
         return super().create(request, *args, **kwargs)
 
     def update(self, request, *args, **kwargs):

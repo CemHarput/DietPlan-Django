@@ -8,6 +8,7 @@ class Plan(models.Model):
     diet_request = models.TextField()
     diet_start_date = models.DateField()
     diet_end_date = models.DateField()
+    create_date = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return f"Plan from {self.diet_start_date} to {self.diet_end_date}"
