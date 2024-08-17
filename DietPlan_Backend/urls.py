@@ -20,11 +20,13 @@ from django.contrib.auth import views as auth_views
 from rest_framework.routers import DefaultRouter
 
 from DietPlan.BodyTrait.views import BodyTraitViewSet
+from DietPlan.Meal.views import MealViewSet
 from DietPlan.Plan.views import PlanViewSet
 
 router = DefaultRouter()
 router.register(r'bodytraits', BodyTraitViewSet)
 router.register(r'plans', PlanViewSet)
+router.register(r'meals', MealViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),  # DRF login/logout

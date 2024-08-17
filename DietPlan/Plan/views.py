@@ -50,9 +50,12 @@ def call_chatgpt_for_meal_suggestion(plan):
     chatgpt_response = client.chat.completions.create(
         model="gpt-4o",
         messages=messages,
-        max_tokens=150
+        max_tokens=4096
     )
-    return chatgpt_response.choices[0].message.content.strip()
+    full_response = chatgpt_response.choices[0].message.content.strip()
+    logger.info(f"Full OpenAI response: {full_response}")
+
+    return full_response
 
 
 class PlanViewSet(viewsets.ModelViewSet):
