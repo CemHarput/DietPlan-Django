@@ -144,6 +144,8 @@ else:
     STATIC_ROOT = STATIC_URL
 
     MEDIA_LOCATION = 'media'
+    DOCUMENT_LOCATION = MEDIA_LOCATION + '/documents'
+    IMAGE_SETTING_LOCATION = MEDIA_LOCATION + '/image_settings'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
