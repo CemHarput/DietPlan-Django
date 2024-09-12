@@ -1,6 +1,6 @@
 # DietPlan-Django
 
-DietPlan is a Django-based application for managing user diets, tracking body traits, and integrating with AWS S3 for file storage.
+DietPlan is a Django-based application for tracking user diets using ChatGPT, body characteristics, and integration with AWS S3 for file storage.
 
 ## Features
 - User authentication and registration
